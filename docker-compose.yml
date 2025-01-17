@@ -1,0 +1,11 @@
+services:
+  transactional-db:
+    image: postgres:17.1
+    container_name: transactional_db
+    restart: always
+    environment:
+     POSTGRES_USER: postgres
+     POSTGRES_PASSWORD: postgres
+     POSTGRES_DB: transactional_db
+    ports:
+      - "5452:5432"
