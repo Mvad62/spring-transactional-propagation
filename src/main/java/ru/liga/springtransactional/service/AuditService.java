@@ -2,6 +2,7 @@ package ru.liga.springtransactional.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ru.liga.springtransactional.model.Audit;
 import ru.liga.springtransactional.repository.AuditRepository;
@@ -14,7 +15,7 @@ public class AuditService {
 
     private final AuditRepository auditRepository;
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void log(String action, String details) {
         Audit audit = new Audit();
         audit.setAction(action);
