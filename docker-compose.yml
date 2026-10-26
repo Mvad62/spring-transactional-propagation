@@ -8,4 +8,4 @@ services:
      POSTGRES_PASSWORD: postgres
      POSTGRES_DB: transactional_db
     ports:
-      - "5452:5432"
+      - "5432:5432"
